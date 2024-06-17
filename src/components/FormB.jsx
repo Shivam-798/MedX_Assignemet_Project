@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './FormA.css';
 
-const FormB = () => {
+const FormA = () => {
   const [name, setName] = useState(localStorage.getItem('name') || '');
   const [countryCode, setCountryCode] = useState(localStorage.getItem('countryCode') || '');
   const [phoneNumber, setPhoneNumber] = useState(localStorage.getItem('phoneNumber') || '');
@@ -30,16 +31,16 @@ const FormB = () => {
   }
 
   return (
-    <div className="form">
-      <h1>Form A</h1>
+    <div className="form1">
+      <h1>Form B</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+          <input className='field1' type="text" value={name} onChange={(e) => setName(e.target.value)} required />
         </label>
         <label>
           Country Code:
-          <select value={countryCode} onChange={(e) => setCountryCode(e.target.value)} required>
+          <select className='field' value={countryCode} onChange={(e) => setCountryCode(e.target.value)} required>
             <option value="">Select</option>
             <option value="+1">+1</option>
             <option value="+91">+91</option>
@@ -47,7 +48,7 @@ const FormB = () => {
         </label>
         <label>
           Phone Number:
-          <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
+          <input className='field2' type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
         </label>
         <button type="submit">Submit</button>
       </form>
@@ -55,4 +56,7 @@ const FormB = () => {
   );
 }
 
-export default FormB;
+export default FormA;
+
+
+
